@@ -1,12 +1,12 @@
-bif [ -z $UPSTREAM_REPO ]
+if [ -z $UPSTREAM_REPO ]
 then
   echo "Cloning main Repository"
-  git clone https://github.com/MeizCrazyLeader/Nobi-Filter-Bot.git /Nobi-Filter-Bot
+  git clone https://github.com/MeizCrazyLeader/Nobi-Filter-Bot.git /Nobi-Filter-Bot 
 else
   echo "Cloning Custom Repo from $UPSTREAM_REPO "
-  git clone $UPSTREAM_REPO /Nobi-Filter-Bot
+  git clone $UPSTREAM_REPO /Nobi-Filter-Bot 
 fi
-cd /Nobi-Filter-Bot
+cd /Nobi-Filter-Bot 
 pip3 install -U -r requirements.txt
-echo "Starting...."
+echo "Starting Bot...."
 python3 bot.py
